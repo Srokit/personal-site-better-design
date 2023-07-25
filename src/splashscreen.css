@@ -41,12 +41,11 @@
   justify-content: center;
   align-items: center;
   /* Background color */
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.0);
 }
 
 .splashscreen-bg-bottom{
   background-color: aqua;
-  opacity: 0.4;
   /* Takes up whole parent */
   position: absolute;
   top: 50%;
@@ -65,7 +64,6 @@
   left: 0;
   right: 0;
   bottom: 50%;
-  opacity: 0.4;
   animation: profPicGoesUp 1s ease-in-out 6s;
   animation-fill-mode: forwards;
 }
