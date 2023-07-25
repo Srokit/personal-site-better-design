@@ -1,0 +1,198 @@
+/*
+  This animation brings the profile pic down from hidden above
+  the top to the middle.
+ */
+ @keyframes profpicComesDown{
+  0%{
+    transform: translateY(-200vh);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+@keyframes profPicGoesUp {
+  0%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(-200vh);
+  }
+}
+
+@keyframes splashscreenBottomGoesDown {
+  0%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(100vh);
+  }
+}
+
+.splashscreen-container {
+  /* Takes up whole parent */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Centers children */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Background color */
+  background-color: white;
+}
+
+.splashscreen-bg-bottom{
+  background-color: aqua;
+  opacity: 0.4;
+  /* Takes up whole parent */
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  animation: splashscreenBottomGoesDown 1s ease-in-out 6s;
+  animation-fill-mode: forwards;
+}
+
+.splashscreen-bg-top{
+  background-color: aqua;
+  /* Takes up whole parent */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 50%;
+  opacity: 0.4;
+  animation: profPicGoesUp 1s ease-in-out 6s;
+  animation-fill-mode: forwards;
+}
+
+.ss-main-area {
+  width: 300px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  /* Center children horizontally */
+  align-items: center;
+  gap: 20px;
+}
+
+.prof-pic{
+  position: relative;
+  width: 190px;
+  height: 190px;
+  animation: profpicComesDown 1s ease-in-out 0s,
+             profPicGoesUp 1s ease-in-out 6s;
+  animation-fill-mode: forwards;
+  border-radius: 100%;
+  /* Clips overflow */
+  overflow: hidden;
+}
+
+.prof-pic-circular-border {
+  background-color: white;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.prof-pic > img{
+  /* Takes up whole parent */
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 180px;
+  height: 180px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+/*
+  Animation which brings the first prompt in from the left.
+ */
+@keyframes prompt1ComesIn{
+  0%{
+    transform: translateX(-200vw);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+
+@keyframes prompt1ComesInFromRight{
+  0%{
+    transform: translateX(100vw);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+
+@keyframes promptsGoDown {
+  0%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(100vh);
+  }
+}
+
+.prompt1 {
+  position: relative;
+  transform: translate(-200vw, 0);
+  animation: prompt1ComesIn 1s ease-in-out 1s,
+             promptsGoDown 1s ease-in-out 6s;
+  animation-fill-mode: forwards;
+  /* display: flex; */
+  border-radius: 10%;
+  padding: 10px;
+}
+
+.prompt-g {
+  background-color: rgba(96, 196, 104, 1);
+}
+
+.prompt-b {
+  background-color: rgba(61, 131, 246);
+}
+
+.prompt2 {
+  position: relative;
+  transform: translate(100vw, 0);
+  animation: prompt1ComesInFromRight 1s ease-in-out 2s,
+             promptsGoDown 1s ease-in-out 6s;
+  animation-fill-mode: forwards;
+  /* display: flex; */
+  border-radius: 10%;
+  padding: 10px;
+}
+
+.prompt3 {
+  position: relative;
+  transform: translate(-200vw, 0);
+  animation: prompt1ComesIn 1s ease-in-out 3s,
+             promptsGoDown 1s ease-in-out 6s;
+  animation-fill-mode: forwards;
+  /* display: flex; */
+  border-radius: 10%;
+  padding: 10px;
+}
+
+.prompt {
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+  width: 200px;
+  text-align: center;
+}
+
+.prompt > p {
+  font-size: 20px;
+}
+
+p {
+  margin: 0 0;
+}
