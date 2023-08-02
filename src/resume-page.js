@@ -1,4 +1,7 @@
 import './resume-page.css';
+import '@splidejs/react-splide/css';
+
+import { Splide, SplideSlide } from '@splidejs/react-splide';
 
 import samsungLogo from './images/samsung_logo.png';
 import crosLogo from './images/cros_logo.png'
@@ -7,7 +10,8 @@ import andLogo from './images/and_logo.png'
 const ResumePage = () => {
   return (
     <div className="resumePage">
-      <div className="resumeMainArea">
+    <Splide aria-label="My Favorite Images">
+      <SplideSlide>
         <div className="resumeCard">
           <img className="resumeCardLogo samsungLogo" src={samsungLogo} />
           <div className="resumeCardTitle">
@@ -18,6 +22,8 @@ const ResumePage = () => {
             hand position and body poses using camera data.
           </div>
         </div>
+      </SplideSlide>
+      <SplideSlide>
         <div className="resumeCard">
           <img className="resumeCardLogo crosLogo" src={crosLogo} />
           <div className="resumeCardTitle">
@@ -28,6 +34,8 @@ const ResumePage = () => {
           while drawing frames on CrOS machines.
           </div>
         </div>
+      </SplideSlide>
+      <SplideSlide>
         <div className="resumeCard">
           <img className="resumeCardLogo andLogo" src={andLogo} />
           <div className="resumeCardTitle">
@@ -38,7 +46,8 @@ const ResumePage = () => {
           allowed third-party developers to easily integrate into Android.
           </div>
         </div>
-      </div>
+      </SplideSlide>
+    </Splide>
     </div>
   );
 };
