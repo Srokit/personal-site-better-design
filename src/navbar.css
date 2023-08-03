@@ -1,0 +1,33 @@
+.navbar-comp {
+  position: absolute;
+  padding-left: 10px;
+  top: 0;
+  left: 0;
+  height: 70px;
+  width: 100%;
+  border-bottom: solid 0.5px;
+  border-color: gray;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: start;
+  align-items: center;
+}
+
+.navbar-comp-title {
+  color: black;
+}
+
+.navbar-comp-link {
+  text-decoration: none;
+}
+
+.navbar-comp-email {
+  color: black;
+}
+
+.navbar-comp-div-line {
+  border-left: solid 1.5px;
+  border-color: lightgray;
+  height: 60%;
+}

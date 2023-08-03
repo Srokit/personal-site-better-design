@@ -1,12 +1,17 @@
 import { useEffect, useState } from 'react';
 import {useCookies} from 'react-cookie';
 
+import {CNavbar, CContainer, CNavbarBrand} from '@coreui/react';
+import Navbar from './navbar';
+
 import logo from './logo.svg';
 
 import SplashScreen from './splashscreen';
 import ResumePage from './resume-page';
 
 import './App.css';
+
+import '@coreui/coreui/dist/css/coreui.min.css';
 
 const REMOVE_SS_SECONDS = 7;
 // 1 week
@@ -33,6 +38,7 @@ function App() {
   return (
     <div className="App">
       <ResumePage />
+      <Navbar />
       { (showingSS) ? <SplashScreen /> : null }
     </div>
   );
